@@ -1,0 +1,6 @@
+{
+  "name": "XForm",
+  "version": "0.0.0",
+  "private": true,
+  "main": "./XForm.js"
+}

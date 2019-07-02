@@ -1,0 +1,7 @@
+{
+  "rules": {
+    "no-extra-semi": 1,
+    "eqeqeq": 1
+  },
+  "parser": "babel-eslint"
+}
