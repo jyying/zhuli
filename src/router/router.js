@@ -5,8 +5,8 @@ export default [
     component: () => import('../modules/login/index.js')
   },
   {
-    path: '/print',
-    models: () => [import('../modules/print/index.m')],
-    component: () => import('../modules/print/index.js')
+    path: '/home',
+    models: () => [import('../modules/home/index.m')],
+    component: () => import('../modules/home/index.js')
   }
 ]

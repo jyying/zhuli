@@ -48,11 +48,12 @@ const _webpack = {
       }
     ]
   },
-  // resolve: {
-  //   alias: {
-  //     '@ant-design/icons/lib/dist$': path.resolve(__dirname, './src/config/icons.js')
-  //   }
-  // },
+  resolve: {
+    alias: {
+      // '@ant-design/icons/lib/dist$': path.resolve(__dirname, './src/config/icons.js')
+      components: path.join(__dirname, '../', 'src/components/')
+    }
+  },
   plugins: [
     new HtmlWebpackPlugin({
       title: 'name',

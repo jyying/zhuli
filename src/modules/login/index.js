@@ -7,10 +7,10 @@ class Login extends Component {
   render() {
     return (
       <div>
-        names
+        登录
       </div>
     )
   }
 }
 
-export default Form.create()(Login)
+export default Login
