@@ -7,12 +7,12 @@ import HomeInfo from './info'
 
 const XTabBarItem = XTabBar.Item
 
-export default class Print extends Component {
+export default class Home extends Component {
   constructor() {
     super()
     this.state = {
       data: 'name',
-      selectedTab: 'release',
+      selectedTab: 'info',
     }
   }
 

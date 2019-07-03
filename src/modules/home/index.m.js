@@ -1,4 +1,8 @@
 export default {
-  namespace: 'print',
-  state: [],
+  namespace: 'home',
+  state: [
+    {
+      name: 'home'
+    }
+  ],
 }

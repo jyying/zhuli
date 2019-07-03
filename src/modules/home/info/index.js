@@ -1,4 +1,6 @@
 import React from 'react'
+import { connect } from 'dva'
+import { routerRedux } from 'dva/router'
 
 import imgs1 from '../../../../public/static/img/1554256777791.png'
 import imgs2 from '../../../../public/static/img/1554256761590.png'
@@ -7,8 +9,9 @@ import imgs4 from '../../../../public/static/img/1554256735113.png'
 
 import './style.less'
 
-export default class HomeInfo extends React.Component {
+class HomeInfo extends React.Component {
   render() {
+    console.log(this.props)
     return (
       <div className="info-view">
         <div className="user-view">
@@ -41,20 +44,20 @@ export default class HomeInfo extends React.Component {
           </div>
         </div>
 
-        <div className="option-list">
-          <div className="list-item">
+        <div className="option-list" onClick={this._onClick}>
+          <div className="list-item" data-url="wallet">
             <img src={imgs1} />
             <p>赚取贡献值</p>
           </div>
-          <div className="list-item">
+          <div className="list-item" data-url="withdrawCash">
             <img src={imgs2} />
             <p>贡献值提现</p>
           </div>
-          <div className="list-item">
+          <div className="list-item" data-url="task">
             <img src={imgs3} />
             <p>发布的任务</p>
           </div>
-          <div className="list-item">
+          <div className="list-item" data-action="modalShow">
             <img src={imgs4} />
             <p>邀请好友</p>
           </div>
@@ -73,4 +76,23 @@ export default class HomeInfo extends React.Component {
       </div>
     )
   }
+
+  _onClick = (e) => {
+    const data = e.target.dataset || {}
+    console.log(data)
+    if (data.url) {
+      this.props.dispatch(routerRedux.push({
+        pathname: data.url,
+      }))
+    }
+    if (data.action) {
+      this[data.action]()
+    }
+  }
+
+  modalShow = () => {
+    console.log('弹出窗口')
+  }
 }
+
+export default connect(({ home }) => ({ home }))(HomeInfo)
