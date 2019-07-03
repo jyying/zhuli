@@ -1,5 +1,7 @@
 import React from 'react'
 
+import Contribution from '../../../containers/contribution'
+
 import './style.less'
 
 export default class HomeRelease extends React.Component {
@@ -18,35 +20,7 @@ export default class HomeRelease extends React.Component {
         <div className="form-view">
           输入发布
         </div>
-
-        <div className="channel-view">
-
-          <div className="recharge">
-            <p className="title">充值得贡献值</p>
-            <div className="recharge-method">
-              <div className="li">
-                <div className="info">
-                  <p className="agg">10</p><p className="agg_">贡献值</p>
-                </div>
-                <p className="explain">增加10次阅读</p>
-                <div className="money">支付1元</div>
-              </div>
-            </div>
-          </div>
-
-          <div className="line-view">
-            <div className="line" />
-          </div>
-
-          <div className="free">
-            <p className="title">其他方式获取贡献值</p>
-            <div className="ul">
-              <div className="li"></div>
-            </div>
-          </div>
-
-        </div>
-
+        <Contribution />
         {
           modalVisible &&
           <div className="modal-view">

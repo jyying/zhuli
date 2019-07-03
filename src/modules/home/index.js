@@ -12,7 +12,7 @@ export default class Print extends Component {
     super()
     this.state = {
       data: 'name',
-      selectedTab: 'list',
+      selectedTab: 'release',
     }
   }
 

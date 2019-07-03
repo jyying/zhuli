@@ -1,5 +1,10 @@
 import React from 'react'
 
+import imgs1 from '../../../../public/static/img/1554256777791.png'
+import imgs2 from '../../../../public/static/img/1554256761590.png'
+import imgs3 from '../../../../public/static/img/1554256711701.png'
+import imgs4 from '../../../../public/static/img/1554256735113.png'
+
 import './style.less'
 
 export default class HomeInfo extends React.Component {
@@ -38,8 +43,20 @@ export default class HomeInfo extends React.Component {
 
         <div className="option-list">
           <div className="list-item">
-            <img />
+            <img src={imgs1} />
             <p>赚取贡献值</p>
+          </div>
+          <div className="list-item">
+            <img src={imgs2} />
+            <p>贡献值提现</p>
+          </div>
+          <div className="list-item">
+            <img src={imgs3} />
+            <p>发布的任务</p>
+          </div>
+          <div className="list-item">
+            <img src={imgs4} />
+            <p>邀请好友</p>
           </div>
         </div>
 
