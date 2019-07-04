@@ -2,6 +2,8 @@ import React from 'react'
 import { connect } from 'dva'
 import { routerRedux } from 'dva/router'
 
+import ShareTip from '../../../containers/shareTip'
+
 import imgs1 from '../../../../public/static/img/1554256777791.png'
 import imgs2 from '../../../../public/static/img/1554256761590.png'
 import imgs3 from '../../../../public/static/img/1554256711701.png'
@@ -10,8 +12,15 @@ import imgs4 from '../../../../public/static/img/1554256735113.png'
 import './style.less'
 
 class HomeInfo extends React.Component {
+  constructor() {
+    super()
+    this.state = {
+      visible: false,
+    }
+  }
+
   render() {
-    console.log(this.props)
+    const { visible } = this.state
     return (
       <div className="info-view">
         <div className="user-view">
@@ -73,13 +82,15 @@ class HomeInfo extends React.Component {
         </div>
 
         <p className="copyright">更多贡献值，更多阅读量</p>
+        {
+          visible && <ShareTip onClick={() => this.setState({ visible: false })} />
+        }
       </div>
     )
   }
 
   _onClick = (e) => {
     const data = e.target.dataset || {}
-    console.log(data)
     if (data.url) {
       this.props.dispatch(routerRedux.push({
         pathname: data.url,
@@ -91,7 +102,9 @@ class HomeInfo extends React.Component {
   }
 
   modalShow = () => {
-    console.log('弹出窗口')
+    this.setState({
+      visible: true,
+    })
   }
 }
 

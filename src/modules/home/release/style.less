@@ -1,8 +1,132 @@
-.top-explain {
-  background-color: #fffcf3;
-  padding: 6px 15px;
-  height: auto;
-  line-height: 20px;
-  color: #707070;
-  font-size: 14px;
+
+.form-view {
+  margin: 15px;
+  padding: 30px 15px;
+  background-color: white;
+  border-radius: 5px;
+  .form-title {
+    display: flex;
+    align-items: center;
+    p {
+      padding: 3px 0;
+      color: #707070;
+      font-size: 16px;
+      font-weight: bold;
+    }
+    .img {
+      margin-left: 5px;
+      width: 15px;
+      display: flex;
+      align-items: center;
+      img {
+        height: 15px;
+        width: 15px;
+      }
+    }
+  }
+  .ex {
+    margin: 10px 0;
+    color: #aaa;
+    font-size: 12px;
+    display: flex;
+    align-items: center;
+    img {
+      width: 10px;
+      height: 10px;
+    }
+    p {
+      margin-left: 5px;
+    }
+    * {
+      pointer-events: none;
+    }
+  }
+  .form-btn {
+    margin-top: 20px;
+    height: 46px;
+    line-height: 46px;
+    border-radius: 5px;
+    background: linear-gradient(270deg,#6b76ff 0,#a5aeff 100%);
+    color: #fff;
+    font-size: 16px;
+    text-align: center;
+  }
+}
+
+.form-group {
+  .form-input {
+    margin-top: 5px;
+    font-size: 14px;
+    border-bottom:1px solid #f6f6f6;
+    input {
+      margin: 10px 0;
+      padding: 4px 0;
+      display: inline-block;
+      width: 100%;
+      color: #343434;
+      border: 0;
+      outline: 0;
+      font-size: 14px;
+    }
+    .view-value-content {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      .value-input {
+        flex: 1;
+      }
+      .vertical-line {
+        margin: auto 10px;
+        width: 1px;
+        height: 10px;
+        background-color: #ccc;
+      }
+      .surplus-value {
+        color: #707070;
+        font-size: 12px;
+      }
+    }
+    &.suffix {
+      margin-top:20px;
+    }
+  }
+}
+
+.modal-view {
+  position: fixed;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  background: rgba(52,52,52,0.6);
+  z-index: 3;
+  display: flex;
+  align-items: center;
+  .modal-content {
+    margin: auto 45px;
+    width: 100%;
+    padding: 20px;
+    background-color: white;
+    border-radius: 5px;
+    .title {
+      margin-bottom: 15px;
+      color: #343434;
+      font-size: 16px;
+      font-weight: bold;
+      text-align: center;
+    }
+    p {
+      padding: 5px 0;
+      color: #707070;
+      font-size: 14px;
+      display: flex;
+      align-items: center;
+      line-height: 25px;
+      img {
+        margin-left: 5px;
+        margin-right: 5px;
+        width: 15px;
+      }
+    }
+  }
 }

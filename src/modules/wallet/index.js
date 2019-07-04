@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import JumpBtn from '../../containers/jumpBtn'
 import './style.less'
 
 import Contribution from './../../containers/contribution/index'
@@ -25,6 +26,8 @@ class Wallet extends Component {
             <div className="item-time">2019-07-01 17:19</div>
           </div>
         </div>
+
+        <JumpBtn />
       </div>
     )
   }

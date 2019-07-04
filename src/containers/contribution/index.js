@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import ShareTip from '../shareTip'
 
 import img1 from '../../../public/static/img/1554209269603.png'
 import img2 from '../../../public/static/img/1554359788074.png'
@@ -26,10 +27,12 @@ export default class Contribution extends Component {
           money: 40,
         }
       ],
+      visible: false,
     }
   }
   render() {
-    const { rList } = this.state
+    const { rList, visible } = this.state
+    const { onClick: _onClick } = this.props
     return (
       <div className="channel-view">
 
@@ -58,16 +61,26 @@ export default class Contribution extends Component {
         <div className="free">
           <p className="title">其他方式获取贡献值</p>
           <div className="ul">
-            <div className="li">
+            <div className="li" onClick={_onClick}>
               <img src={img1} />
             </div>
-            <div className="li">
+            <div className="li" onClick={this.showShare}>
               <img src={img2} />
             </div>
           </div>
         </div>
 
+        {
+          visible &&
+          <ShareTip onClick={() => this.setState({ visible: false })} />
+        }
       </div>
     )
+  }
+
+  showShare = () => {
+    this.setState({
+      visible: true,
+    })
   }
 }
