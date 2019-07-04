@@ -13,15 +13,18 @@ class App extends Component {
     isLogin: true,
   }
 
-  toggle = () => {
-    this.setState({
-      collapsed: !this.state.collapsed,
-    })
+  componentDidMount() {
+    const isLogin = window.sessionStorage.isLogin
+    console.log(isLogin)
+    if (isLogin) {
+      this.props.dispatch({ type: 'app/goPage', payload: { pathname: 'home' } })
+    } else {
+      this.props.dispatch({ type: 'app/goPage', payload: { pathname: 'login' } })
+    }
   }
 
   render() {
     const { children } = this.props
-    // console.log(menu)
     return (
       <div className="main">
         {children}
