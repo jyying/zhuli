@@ -1,8 +1,10 @@
 import React, { Component } from 'react'
 import JumpBtn from '../../containers/jumpBtn'
-import './style.less'
+import Contribution from './../../containers/contribution'
 
-import Contribution from './../../containers/contribution/index'
+import { connect } from 'dva'
+
+import './style.less'
 
 class Wallet extends Component {
   render() {
@@ -16,7 +18,7 @@ class Wallet extends Component {
             </div>
           </div>
         </div>
-        <Contribution />
+        <Contribution type="solid" onClick={ () => this.props.dispatch({ type: 'app/goPage', payload: { pathname: 'home' } })} />
         <div className="wallet-list">
           <div className="item">
             <div className="item-info">
@@ -33,4 +35,4 @@ class Wallet extends Component {
   }
 }
 
-export default Wallet
+export default connect(({ app }) => ({ app }))(Wallet)

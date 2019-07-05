@@ -2,8 +2,6 @@ import React, { Component } from 'react'
 import { connect } from 'dva'
 import { withRouter } from 'dva/router'
 
-// import menu from '../config/menu'
-
 import './app.less'
 
 class App extends Component {
@@ -15,7 +13,7 @@ class App extends Component {
 
   componentDidMount() {
     const isLogin = window.sessionStorage.isLogin
-    console.log(isLogin)
+    console.log('是否登录', isLogin)
     if (isLogin) {
       this.props.dispatch({ type: 'app/goPage', payload: { pathname: 'home' } })
     } else {

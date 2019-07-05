@@ -32,9 +32,9 @@ export default class Contribution extends Component {
   }
   render() {
     const { rList, visible } = this.state
-    const { onClick: _onClick } = this.props
+    const { onClick: _onClick, type = '' } = this.props
     return (
-      <div className="channel-view">
+      <div className={`channel-view ${type}`}>
 
         <div className="recharge">
           <p className="title">充值得贡献值</p>
