@@ -3,6 +3,8 @@ import { connect } from 'dva'
 
 import img1 from '../../../public/static/img/login_logo.png'
 
+const NAME_SPACE = 'login'
+
 import './style.less'
 
 class Login extends Component {
@@ -57,10 +59,11 @@ class Login extends Component {
     console.log('验证码：', msg.value)
     console.log('短信：', code.value)
 
-    window.sessionStorage.isLogin = 1
-    this.props.dispatch({ type: 'app/goPage', payload: { pathname: 'home' } })
-    console.log(this.props)
+    // window.sessionStorage.isLogin = 1
+    // this.props.dispatch({ type: 'app/goPage', payload: { pathname: 'home' } })
+    this.props.dispatch({ type: `${NAME_SPACE}/login`, payload: { mobile: '15623973910', code: '546' } })
+      .then(res => console.log(res))
   }
 }
 
-export default connect(({ app }) => ({ app }))(Login)
+export default connect((state) => ({ ...state[NAME_SPACE] }))(Login)
