@@ -15,7 +15,7 @@ class App extends Component {
     const isLogin = window.sessionStorage.isLogin
     console.log('是否登录', isLogin)
     if (isLogin) {
-      this.props.dispatch({ type: 'app/goPage', payload: { pathname: 'home' } })
+      // this.props.dispatch({ type: 'app/goPage', payload: { pathname: 'home' } })
     } else {
       this.props.dispatch({ type: 'app/goPage', payload: { pathname: 'login' } })
     }

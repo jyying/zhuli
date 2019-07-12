@@ -21,7 +21,7 @@ export default class Home extends Component {
     super()
     this.state = {
       data: 'name',
-      selectedTab: window.sessionStorage.tabVisible || 'list',
+      selectedTab: window.sessionStorage.tabVisible || 'info',
     }
   }
 

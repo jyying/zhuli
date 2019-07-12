@@ -59,10 +59,10 @@ class Login extends Component {
     console.log('验证码：', msg.value)
     console.log('短信：', code.value)
 
-    // window.sessionStorage.isLogin = 1
-    // this.props.dispatch({ type: 'app/goPage', payload: { pathname: 'home' } })
-    this.props.dispatch({ type: `${NAME_SPACE}/login`, payload: { mobile: '15623973910', code: '546' } })
-      .then(res => console.log(res))
+    window.sessionStorage.isLogin = 1
+    this.props.dispatch({ type: 'app/goPage', payload: { pathname: 'home' } })
+    // this.props.dispatch({ type: `${NAME_SPACE}/login`, payload: { mobile: '15623973910', code: '546' } })
+    //   .then(res => console.log(res))
   }
 }
 

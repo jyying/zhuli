@@ -23,5 +23,10 @@ export default [
     path: '/task',
     models: () => [import('../modules/task/index.m')],
     component: () => import('../modules/task/index.js')
+  },
+  {
+    path: '/demo',
+    models: () => [import('../modules/demo/scroll/index.m')],
+    component: () => import('../modules/demo/scroll/index.js')
   }
 ]
