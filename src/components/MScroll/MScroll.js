@@ -33,8 +33,11 @@ export default class MScroll extends Component {
 
   render() {
     return (
-      <div className="m-scroll" ref="swipeDown">
-        下拉容器
+      <div className="m-scroll">
+        <div className="show-text">松手刷新</div>
+        <div className="m-view" ref="swipeDown">
+          下拉容器
+        </div>
       </div>
     )
   }
