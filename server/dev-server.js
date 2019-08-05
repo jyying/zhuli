@@ -6,13 +6,14 @@ const webpack = require('webpack')
 const webpackConfig = require('../config/webpack.common')
 
 const compiler = webpack(webpackConfig)
+const port = 8082
 
 const webpackDevMiddleware = require('webpack-dev-middleware')(compiler, {
   publicPath: webpackConfig.output.publicPath,
 })
 
 compiler.hooks.done.tap('myPlugin', (stats) => {
-  console.log('编译完成')
+  console.log('编译完成', port)
 })
 
 // webpackDevMiddleware(compiler, {
@@ -35,4 +36,4 @@ app.get('/', function (req, res, next) {
 
 app.use(webpackDevMiddleware)
 
-app.listen(8082)
+app.listen(port)

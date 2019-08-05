@@ -7,11 +7,24 @@
 
 .m-scroll {
   position: relative;
-  background: blue;
 }
 .m-view {
   position: absolute;
   top:0;
   left:0;
   background: white;
+  &.loading {
+    transform: translateY(50px);
+  }
+  &.load {
+    transform: translateY(0px);
+  }
+}
+
+.show-text {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  height: 50px;
+  background: blue;
 }
