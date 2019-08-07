@@ -16,7 +16,9 @@ export default class ScrollDemo extends Component {
         <MScroll
           state={scrollState}
           onLoad={this.onLoad}
-        />
+        >
+          gdgds
+        </MScroll>
       </div>
     )
   }
